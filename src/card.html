@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Описание страницы сайта." />
+        <link rel="stylesheet" href="css/style.min.css" />
+        <title>card</title>
+    </head>
+
+    <body>
+        <button class="scroll-up">
+            <svg class="scroll-up__svg" viewBox="-2 -2 52 52">
+                <path
+                    class="scroll-up__svg-path"
+                    d="
+					M24,0
+					a24,24 0 0,1 0,48
+					a24,24 0 0,1 0,-48
+				"
+                />
+            </svg>
+        </button>
+
+        <div class="header">
+            <header class="header-top">
+                <div class="header-top__container container">
+                    <a class="header-top__logo responsive-1" href="#">
+                        <img class="lazy-image lazy" src="img/1x1.png" data-src="img/logo.svg" loading="lazy" width="160" height="36" alt="image" />
+                    </a>
+
+                    <div class="search">
+                        <input id="searchSwitch" class="toggle" type="checkbox" />
+                        <div class="search__block">
+                            <input class="search__block-input" id="search" type="search" placeholder="mail" required />
+                            <label class="search__block-label" for="search">Введите название товара</label>
+                        </div>
+                        <label for="searchSwitch" class="toggle-overlay search-overlay"></label>
+                        <label for="searchSwitch" class="search__icon responsive-1"> </label>
+                    </div>
+
+                    <!-- <a class="delivery button-1 hover-background-1 " href="#" >Доставка</a> -->
+                    <input class="delivery-switch toggle" id="deliverySwitch" type="checkbox" />
+                    <label class="toggle-overlay delivery-overlay" for="deliverySwitch"></label>
+                    <label class="delivery button-1 hover-background-1" for="deliverySwitch">Доставка</label>
+                    <ul class="delivery-list toggle-element">
+                        <li class="delivery-list__item">Стандартный с 12:00 до 18:00</li>
+                        <li class="delivery-list__item">Стандартный с 16:00 до 22:00</li>
+                        <li class="delivery-list__item">VIP с 12:00 до 15:00</li>
+                        <li class="delivery-list__item">VIP с 13:00 до 16:00</li>
+                        <li class="delivery-list__item">VIP с 14:00 до 17:00</li>
+                        <li class="delivery-list__item">VIP с 15:00 до 18:00</li>
+                        <li class="delivery-list__item">VIP с 16:00 до 19:00</li>
+                        <li class="delivery-list__item">VIP с 17:00 до 20:00</li>
+                        <li class="delivery-list__item">VIP с 18:00 до 21:00</li>
+                        <li class="delivery-list__item">VIP с 19:00 до 22:00</li>
+                    </ul>
+
+                    <a class="help" href="#">?</a>
+
+                    <div class="header-phone phone">
+                        <a class="header-phone__number-1 phone__number-1 hover-typing-text" href="tel:+74957752767" data-text="+7 (495) 775-27-67">+7 (495) 775-27-67</a>
+                        <input class="header-phone__arrow-switch toggle" id="arrowSwitch" type="checkbox" />
+                        <a class="header-phone__number-2 phone__number-2 hover-typing-text" href="tel:+74959833049" data-text="+7 (495) 983-30-49">+7 (495) 983-30-49</a>
+                        <label class="header-phone__overlay toggle-overlay" for="arrowSwitch"></label>
+                    </div>
+
+                    <input class="toggle" id="cartButtonSwitch" type="checkbox" />
+                    <label class="cart-overlay toggle-overlay" for="cartButtonSwitch"></label>
+                    <label class="cart-button button-1 hover-background-1" for="cartButtonSwitch">
+                        <span class="cart-button__icon"></span>
+                        <span class="cart-button__label">Корзина:</span>
+                        <span class="cart-button__number">0</span>
+                    </label>
+
+                    <div class="cart-element toggle-element">
+                        <p class="cart-element__empty">Ваша корзина пуста</p>
+                        <div class="cart-wrapper">
+                            <div class="cart-item">
+                                <div class="cart-item__image responsive-1">
+                                    <img class="lazy-image lazy" src="img/1x1.png" data-src="https://via.placeholder.com/70" loading="lazy" width="70" height="70" alt="image" />
+                                </div>
+                                <div class="cart-item__description">
+                                    <p class="cart-item__description-label">
+                                        Холодильник Bosch Gold Edition KGN39AD18R
+                                    </p>
+                                    <p class="cart-item__description-price">
+                                        <span class="cart-item__description-price-number">38 290</span>
+                                        <span class="cart-item__description-price-currency">₽</span>
+                                    </p>
+                                </div>
+                                <div class="cart-item__delete"></div>
+                            </div>
+                        </div>
+                        <p class="cart-element__total">
+                            <span class="cart-element__total-text">Итого:</span>
+                            <span class="cart-element__total-number">0</span>
+                            <span class="cart-element__total-currency">₽</span>
+                        </p>
+                        <a class="cart-element__go" href="#">Перейти в корзину</a>
+                    </div>
+
+                    <input class="user toggle" id="user" type="checkbox" />
+                    <label class="user-button" for="user"></label>
+                    <label class="user-overlay toggle-overlay" for="user"></label>
+
+                    <div class="authorization toggle-element tabs">
+                        <input id="filterLogin" class="authorization__switch tabs__switch tabs__switch-1" name="loginRegistration" type="radio" checked />
+                        <input id="filterRegistration" class="authorization__switch tabs__switch tabs__switch-2" name="loginRegistration" type="radio" />
+                        <input id="authorizationReturnSwitch" class="authorization__return-switch" type="checkbox" />
+                        <input id="rememberPasswordSwitch" class="authorization__remember-switch" type="checkbox" checked />
+
+                        <div class="authorization__navigation tabs__navigation">
+                            <label class="authorization__navigation-button authorization__navigation-button-1 tabs__navigation-button tabs__navigation-button-1" for="filterLogin">Вход</label>
+                            <label class="authorization__navigation-button authorization__navigation-button-2 tabs__navigation-button tabs__navigation-button-2" for="filterRegistration">Регистрация</label>
+                        </div>
+
+                        <div class="authorization__content tabs__content">
+                            <div class="authorization__content-item authorization-login">
+                                <form class="authorization-form">
+                                    <label class="authorization-form__label">Логин</label>
+                                    <input class="authorization-form__input" type="text" />
+                                    <label class="authorization-form__label">Пароль</label>
+                                    <input class="authorization-form__input" type="password" />
+                                    <label class="authorization-form__confirm authorization-form__confirm-login">
+                                        <input class="authorization-form__confirm-checkbox" type="checkbox" checked />
+                                        <span class="authorization-form__confirm-text">Запомнить меня на этом компьютере</span>
+                                    </label>
+                                    <button class="authorization-form__submit hover-background-1" type="submit">Авторизоваться</button>
+                                </form>
+                            </div>
+                            <div class="authorization__content-item authorization-registration">
+                                <form class="authorization-form">
+                                    <label class="authorization-form__label">
+                                        Логин
+                                        <span class="authorization-form__label-symbol">*</span>
+                                    </label>
+                                    <input class="authorization-form__input" type="text" required />
+                                    <label class="authorization-form__label">
+                                        Пароль
+                                        <span class="authorization-form__label-symbol">*</span>
+                                    </label>
+                                    <input class="authorization-form__input" type="password" required />
+                                    <label class="authorization-form__label">
+                                        Подтверждение пароля
+                                        <span class="authorization-form__label-symbol">*</span>
+                                    </label>
+                                    <input class="authorization-form__input" type="password" required />
+                                    <label class="authorization-form__label">
+                                        Адрес e-mail
+                                        <span class="authorization-form__label-symbol">*</span>
+                                    </label>
+                                    <input class="authorization-form__input" type="email" required />
+                                    <label class="authorization-form__label">Имя</label>
+                                    <input class="authorization-form__input" type="text" />
+                                    <label class="authorization-form__label">Фамилия</label>
+                                    <input class="authorization-form__input" type="text" />
+
+                                    <label class="authorization-form__confirm">
+                                        <input class="authorization-form__confirm-checkbox" type="checkbox" checked />
+                                        <span class="authorization-form__confirm-text">Запомнить меня на этом компьютере</span>
+                                    </label>
+                                    <label class="authorization-form__confirm">
+                                        <input class="authorization-form__confirm-checkbox" type="checkbox" checked />
+                                        <span class="authorization-form__confirm-text">
+                                            Я хочу учавствовать в бесплатной программе лояльности и получать баллы, информацию о скидках и акциях
+                                        </span>
+                                    </label>
+                                    <button class="authorization-form__submit hover-background-1" type="submit">Регистрация</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="authorization__remember">
+                            <p class="authorization__remember-text">
+                                Если вы забыли пароль, введите логин или E-Mail. Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.
+                            </p>
+                            <form class="authorization-form">
+                                <p class="authorization__remember-title">
+                                    Выслать контрольную строку
+                                </p>
+                                <label class="authorization-form__label">Логин</label>
+                                <input class="authorization-form__input" type="text" />
+                                <label class="authorization-form__label">Пароль</label>
+                                <input class="authorization-form__input" type="password" />
+                                <button class="authorization-form__submit hover-background-1" type="submit">Выслать</button>
+                            </form>
+                        </div>
+
+                        <label class="authorization__remember-button" for="rememberPasswordSwitch">Забыли пароль?</label>
+                        <label class="authorization__return-button" for="rememberPasswordSwitch">Авторизация</label>
+                    </div>
+                </div>
+            </header>
+            <div class="header-bottom card-header-bottom">
+                <div class="header-bottom__container container">
+                    <input id="burger" class="burger toggle" type="checkbox" />
+                    <label class="burger-overlay toggle-overlay" for="burger"></label>
+                    <nav class="navigation">
+                        <ul class="navigation__list">
+                            <li class="navigation__item navigation__item-red"><a href="#" class="navigation__link hover-underline-1">Для кухни</a></li>
+                            <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Для дома</a></li>
+                            <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Климатическая техника</a></li>
+                            <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Телевизоры</a></li>
+                            <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Для дачи</a></li>
+                            <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Спортивные товары</a></li>
+                            <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Автотовары</a></li>
+                        </ul>
+                    </nav>
+                    <a class="header-bottom__call call hover-background-1" href="#">Обратный звонок</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-padding"></div>
+
+        <div class="wrapper container">
+            <div class="main">
+                <div class="main-navigation">
+                    <ul class="breadcrumbs">
+                        <input id="breadcrumbsSwitch" type="checkbox" />
+                        <li class="breadcrumbs__item">
+                            <a class="breadcrumbs__link hover-underline-2" href="index.html"> Каталог</a>
+                        </li>
+                        <div class="breadcrumbs__line"></div>
+                        <li class="breadcrumbs__item">
+                            <a class="breadcrumbs__link hover-underline-2" href="#">Бытовая техника для дома</a>
+                        </li>
+                        <div class="breadcrumbs__line"></div>
+                        <li class="breadcrumbs__item">
+                            <a class="breadcrumbs__link hover-underline-2" href="#">Стиральные машины</a>
+                        </li>
+                        <div class="breadcrumbs__line"></div>
+                        <label class="breadcrumbs__current" for="breadcrumbsSwitch">
+                            Стиральные машины с фронтальной загрузкой
+                            <!-- <span class="breadcrumbs__current-symbol"></span>
+						<span class="breadcrumbs__current-text">Стиральные машины с фронтальной загрузкой</span> -->
+                        </label>
+                    </ul>
+
+                    <a class="return-link hover-svg hover-color" href="#">
+                        <span class="return-link__icon responsive-1">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.7632 15.4258C10.9563 15.6099 11.2599 15.6099 11.4531 15.4258L12.6202 14.3135C12.8269 14.1165 12.8269 13.7866 12.6202 13.5896L7.16358 8.38927C6.95684 8.19225 6.95684 7.86239 7.16358 7.66537L12.6202 2.46503C12.8269 2.26801 12.8269 1.93815 12.6202 1.74113L11.4531 0.6288C11.2599 0.444735 10.9563 0.444735 10.7632 0.628799L3.37979 7.66537C3.17306 7.86239 3.17306 8.19225 3.37979 8.38927L10.7632 15.4258Z"
+                                    fill="#C62306"
+                                />
+                            </svg>
+                        </span>
+                        <span class="return-link__text">Назад</span>
+                    </a>
+                </div>
+
+                <div class="main-card">
+                    <div class="main-card__header">
+                        <h1 class="main-card__top-title">
+                            Фронтальная стиральная машина Bosch WLG 20060 Фронтальная стиральная машина Bosch WLG 20060
+                        </h1>
+                        <div class="main-card__header-bottom">
+                            <div class="main-card__header-left">
+                                <p class="main-card__header-code">
+                                    Артикул: 1413756
+                                </p>
+                                <div class="main-rating" data-rating="4">
+                                    <div class="main-rating__item" data-rating-item="5">
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M20.0622 8.76452C20.406 8.47814 20.2294 7.91895 19.7834 7.88204L14.0713 7.4093C13.8889 7.39421 13.7293 7.28064 13.6552 7.11325L11.4092 2.0347C11.2335 1.63757 10.6699 1.63772 10.4945 2.03496L8.24792 7.12224C8.17384 7.28999 8.01388 7.40373 7.83111 7.41861L2.12363 7.88334C1.67711 7.9197 1.50006 8.47975 1.84454 8.76616L6.14933 12.3453C6.29613 12.4674 6.36061 12.6624 6.31552 12.8479L5.01763 18.1875C4.91366 18.6152 5.37321 18.9588 5.75411 18.7382L10.7009 15.8727C10.8559 15.7829 11.0471 15.7829 11.2022 15.8727L16.1509 18.7393C16.5315 18.9598 16.9908 18.6168 16.8876 18.1893L15.597 12.8472C15.5522 12.662 15.6166 12.4675 15.763 12.3456L20.0622 8.76452Z"
+                                                fill="#C4C4C4"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="main-rating__item" data-rating-item="4">
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M20.0622 8.76452C20.406 8.47814 20.2294 7.91895 19.7834 7.88204L14.0713 7.4093C13.8889 7.39421 13.7293 7.28064 13.6552 7.11325L11.4092 2.0347C11.2335 1.63757 10.6699 1.63772 10.4945 2.03496L8.24792 7.12224C8.17384 7.28999 8.01388 7.40373 7.83111 7.41861L2.12363 7.88334C1.67711 7.9197 1.50006 8.47975 1.84454 8.76616L6.14933 12.3453C6.29613 12.4674 6.36061 12.6624 6.31552 12.8479L5.01763 18.1875C4.91366 18.6152 5.37321 18.9588 5.75411 18.7382L10.7009 15.8727C10.8559 15.7829 11.0471 15.7829 11.2022 15.8727L16.1509 18.7393C16.5315 18.9598 16.9908 18.6168 16.8876 18.1893L15.597 12.8472C15.5522 12.662 15.6166 12.4675 15.763 12.3456L20.0622 8.76452Z"
+                                                fill="#C4C4C4"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="main-rating__item" data-rating-item="3">
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M20.0622 8.76452C20.406 8.47814 20.2294 7.91895 19.7834 7.88204L14.0713 7.4093C13.8889 7.39421 13.7293 7.28064 13.6552 7.11325L11.4092 2.0347C11.2335 1.63757 10.6699 1.63772 10.4945 2.03496L8.24792 7.12224C8.17384 7.28999 8.01388 7.40373 7.83111 7.41861L2.12363 7.88334C1.67711 7.9197 1.50006 8.47975 1.84454 8.76616L6.14933 12.3453C6.29613 12.4674 6.36061 12.6624 6.31552 12.8479L5.01763 18.1875C4.91366 18.6152 5.37321 18.9588 5.75411 18.7382L10.7009 15.8727C10.8559 15.7829 11.0471 15.7829 11.2022 15.8727L16.1509 18.7393C16.5315 18.9598 16.9908 18.6168 16.8876 18.1893L15.597 12.8472C15.5522 12.662 15.6166 12.4675 15.763 12.3456L20.0622 8.76452Z"
+                                                fill="#C4C4C4"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="main-rating__item" data-rating-item="2">
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M20.0622 8.76452C20.406 8.47814 20.2294 7.91895 19.7834 7.88204L14.0713 7.4093C13.8889 7.39421 13.7293 7.28064 13.6552 7.11325L11.4092 2.0347C11.2335 1.63757 10.6699 1.63772 10.4945 2.03496L8.24792 7.12224C8.17384 7.28999 8.01388 7.40373 7.83111 7.41861L2.12363 7.88334C1.67711 7.9197 1.50006 8.47975 1.84454 8.76616L6.14933 12.3453C6.29613 12.4674 6.36061 12.6624 6.31552 12.8479L5.01763 18.1875C4.91366 18.6152 5.37321 18.9588 5.75411 18.7382L10.7009 15.8727C10.8559 15.7829 11.0471 15.7829 11.2022 15.8727L16.1509 18.7393C16.5315 18.9598 16.9908 18.6168 16.8876 18.1893L15.597 12.8472C15.5522 12.662 15.6166 12.4675 15.763 12.3456L20.0622 8.76452Z"
+                                                fill="#C4C4C4"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="main-rating__item" data-rating-item="1">
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M20.0622 8.76452C20.406 8.47814 20.2294 7.91895 19.7834 7.88204L14.0713 7.4093C13.8889 7.39421 13.7293 7.28064 13.6552 7.11325L11.4092 2.0347C11.2335 1.63757 10.6699 1.63772 10.4945 2.03496L8.24792 7.12224C8.17384 7.28999 8.01388 7.40373 7.83111 7.41861L2.12363 7.88334C1.67711 7.9197 1.50006 8.47975 1.84454 8.76616L6.14933 12.3453C6.29613 12.4674 6.36061 12.6624 6.31552 12.8479L5.01763 18.1875C4.91366 18.6152 5.37321 18.9588 5.75411 18.7382L10.7009 15.8727C10.8559 15.7829 11.0471 15.7829 11.2022 15.8727L16.1509 18.7393C16.5315 18.9598 16.9908 18.6168 16.8876 18.1893L15.597 12.8472C15.5522 12.662 15.6166 12.4675 15.763 12.3456L20.0622 8.76452Z"
+                                                fill="#C4C4C4"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-card__header-right">
+                                <p class="old-price main-card__old-price">
+                                    <span class="old-price__text">Цена:</span>
+                                    <span class="old-price__number">23 990</span>
+                                    <span class="old-price__symbol">₽</span>
+                                </p>
+                                <p class="main-card__discount">
+                                    <span class="main-card__discount-text">Цена со скидкой:</span>
+                                    <span class="main-card__discount-number">21 990</span>
+                                    <span class="main-card__discount-symbol">₽</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aside">
+                <div class="delivery-choise tabs show-item">
+                    <input id="deliveryChoiseSwitch1" class="delivery-choise__switch tabs__switch tabs__switch-1" name="deliveryChoise" type="radio" checked />
+                    <input id="deliveryChoiseSwitch2" class="delivery-choise__switch tabs__switch tabs__switch-2" name="deliveryChoise" type="radio" />
+                    <input id="deliveryChoiseSwitch3" class="delivery-choise__switch tabs__switch tabs__switch-3" name="deliveryChoise" type="radio" />
+                    <div class="delivery-choise__slider">
+                        <p class="delivery-choise__slider-title delivery-choise__slider-title-1">Доставка Vasko</p>
+                        <p class="delivery-choise__slider-title delivery-choise__slider-title-2">Самовывоз</p>
+                        <p class="delivery-choise__slider-title delivery-choise__slider-title-3">Расчет корзины</p>
+                    </div>
+                    <div class="delivery-choise__navigation tabs__navigation">
+                        <label class="delivery-choise__navigation-button delivery-choise__navigation-button-1 tabs__navigation-button tabs__navigation-button-1 responsive-1" for="deliveryChoiseSwitch1">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M39.8047 23.3343C40.3746 24.3985 41.2052 24.6279 42.6566 24.9927C42.7422 25.0142 42.8275 25.0342 42.9121 25.054L42.9122 25.054L42.9122 25.0541C44.0176 25.3132 45.0001 25.5434 45 28.7823V32.9227C45 34.1214 43.9858 35.102 42.746 35.102H40.1825C40.0582 35.102 40.0583 34.953 40.0583 34.8744V34.8708C40.0583 32.1212 37.7444 29.884 34.9002 29.884C32.0559 29.884 29.742 32.121 29.742 34.8708L29.742 34.8784C29.7423 34.9493 29.7429 35.102 29.5486 35.102H19.3809C19.1802 35.102 19.1831 34.9725 19.1849 34.8912L19.1852 34.8708C19.1852 32.1212 16.8712 29.884 14.0269 29.884C11.1828 29.884 8.86869 32.121 8.86869 34.8708C8.86869 34.9481 8.82661 35.102 8.54086 35.102H7.28094C6.02645 35.102 5 34.1094 5 32.8966V16.1663V14.2054C5 12.9926 6.02645 12 8.18845 12H29.4316C30.9418 12 31.6517 12.9925 31.6517 14.2054V17.3344C31.6517 17.6755 32.0023 17.6685 32.0023 17.6685H34.6089C35.8481 17.6685 37.3288 18.5393 37.899 19.6035L39.8047 23.3343ZM38.3675 24.7988H31.9518C31.6868 24.7988 31.6516 24.5493 31.6516 24.5493V19.3818C31.6516 19.3818 31.6366 19.1834 31.977 19.1834H33.8076C34.9106 19.1834 36.2281 19.9583 36.7352 20.9052L38.431 24.2249C38.5025 24.3585 38.5788 24.4772 38.6605 24.5835C38.7208 24.6615 38.6198 24.7988 38.3675 24.7988ZM14.0265 31.0436C11.84 31.0436 10.0681 32.7563 10.0681 34.8706C10.0681 36.985 11.84 38.6976 14.0265 38.6976C16.2138 38.6976 17.9852 36.985 17.9852 34.8706C17.9852 32.7563 16.2138 31.0436 14.0265 31.0436ZM14.0265 36.5343C13.076 36.5343 12.3059 35.7896 12.3059 34.8706C12.3059 33.9511 13.076 33.2068 14.0265 33.2068C14.9771 33.2068 15.7478 33.9511 15.7478 34.8706C15.7478 35.7896 14.9771 36.5343 14.0265 36.5343ZM34.9001 31.0436C32.7137 31.0436 30.9419 32.7563 30.9419 34.8706C30.9419 36.985 32.7137 38.6976 34.9001 38.6976C37.0875 38.6976 38.8589 36.985 38.8589 34.8706C38.8589 32.7563 37.0875 31.0436 34.9001 31.0436ZM34.9001 36.5343C33.9497 36.5343 33.1796 35.7896 33.1796 34.8706C33.1796 33.9511 33.9497 33.2068 34.9001 33.2068C35.8508 33.2068 36.6216 33.9511 36.6216 34.8706C36.6216 35.7896 35.8508 36.5343 34.9001 36.5343ZM22.3683 16.203C22.4097 16.0816 22.5239 16 22.6522 16H26.5496C26.7638 16 26.909 16.218 26.8264 16.4156L21.2655 29.7307C21.1627 29.9767 20.8141 29.9765 20.7117 29.7303L15.1727 16.4152C15.0905 16.2176 15.2357 16 15.4497 16H19.3467C19.4756 16 19.59 16.0823 19.6311 16.2045L20.7061 19.404C20.7974 19.6759 21.1816 19.6769 21.2744 19.4055L22.3683 16.203Z"
+                                    fill="#696969"
+                                />
+                            </svg>
+                        </label>
+                        <label class="delivery-choise__navigation-button delivery-choise__navigation-button-2 tabs__navigation-button tabs__navigation-button-2 responsive-1" for="deliveryChoiseSwitch2">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M33.2816 16.4433C35.0756 16.4433 36.535 14.998 36.535 13.2214C36.535 13.0785 36.5246 12.9379 36.5062 12.7997L36.883 12.7924C37.3209 12.7837 37.7929 12.4818 37.9809 12.0901L38.2922 11.4413C38.4093 11.1972 38.4031 10.9423 38.2752 10.7421C38.1474 10.5419 37.9179 10.4271 37.6431 10.4271L34.9081 10.4333C34.4292 10.1583 33.8739 10 33.2816 10C31.4878 10 30.0284 11.4451 30.0284 13.2214C30.0284 14.998 31.4878 16.4433 33.2816 16.4433Z"
+                                    fill="#696969"
+                                />
+                                <path
+                                    d="M40.8568 24.8131L37.0617 17.9805C36.7952 17.5005 36.4617 17.1245 35.5998 17.1245H31.7305C31.1923 17.1245 30.7587 17.5191 30.6563 17.6258L28.5807 19.7875C28.2447 20.1374 27.9033 20.7819 27.8035 21.2546L26.9492 25.3006C26.9373 25.3572 26.9312 25.4139 26.928 25.4703L24.7648 33.7366H12.2639C11.6332 33.7366 11.1218 34.243 11.1218 34.8676C11.1218 35.1361 11.2168 35.3824 11.3746 35.5763C11.137 35.9739 11 36.4372 11 36.9318C11 38.404 12.2096 39.6017 13.6964 39.6017C15.1834 39.6017 16.393 38.404 16.393 36.9318C16.393 36.6036 16.3326 36.2892 16.2227 35.9986H21.2686C21.1587 36.2892 21.0983 36.6036 21.0983 36.9318C21.0983 38.404 22.3079 39.6017 23.7947 39.6017C25.2816 39.6017 26.4913 38.404 26.4913 36.9318C26.4913 36.4816 26.3777 36.0573 26.1782 35.6848C26.5103 35.4548 26.7638 35.1142 26.8687 34.7134L29.1421 26.0264C29.1999 25.9354 29.2462 25.8371 29.2773 25.7326L30.2029 22.6128C30.2663 22.3991 30.4188 22.1178 30.5883 21.8824V27.0772L28.0611 37.8078C27.8435 38.7321 28.4191 39.6856 29.3442 39.9332L29.3712 39.9404C29.5188 39.9799 29.6703 40 29.8214 40C30.6142 40 31.2945 39.4632 31.4755 38.6946L33.7819 28.9016L34.6815 31.3215C34.9293 31.9879 35.201 33.1475 35.2747 33.8537L35.7568 38.4641C35.842 39.2787 36.491 39.8699 37.2999 39.8699C37.432 39.8699 37.5661 39.8539 37.6981 39.8222L37.7253 39.8157C38.642 39.5959 39.2919 38.663 39.174 37.7363L38.4577 32.1121C38.36 31.3447 38.0531 30.1328 37.7736 29.4105L36.7483 26.7613C36.7396 26.7387 36.729 26.717 36.7194 26.6949V22.7467L38.6525 26.1647C38.8469 26.5086 39.2114 26.7221 39.6038 26.7221C39.815 26.7221 40.0221 26.6609 40.2027 26.5451L40.4577 26.3817C40.9744 26.0505 41.1533 25.3469 40.8568 24.8131ZM23.7947 36.0415C24.2907 36.0415 24.6941 36.4409 24.6941 36.9318C24.6941 37.4227 24.2907 37.8221 23.7947 37.8221C23.2991 37.8221 22.8957 37.4228 22.8957 36.9318C22.8957 36.4408 23.2991 36.0415 23.7947 36.0415ZM13.6964 37.8221C13.2006 37.8221 12.7973 37.4228 12.7973 36.9318C12.7973 36.4408 13.2006 36.0415 13.6964 36.0415C14.1923 36.0415 14.5958 36.4409 14.5958 36.9318C14.5958 37.4227 14.1923 37.8221 13.6964 37.8221Z"
+                                    fill="#696969"
+                                />
+                                <path
+                                    d="M12.0184 31.9738H23.338C23.7997 31.9738 24.1755 31.6017 24.1755 31.1444V23.5395C24.1755 23.0823 23.7997 22.7102 23.338 22.7102H12.0184C11.5566 22.7102 11.1808 23.0823 11.1808 23.5395V31.1444C11.1808 31.6017 11.5566 31.9738 12.0184 31.9738Z"
+                                    fill="#696969"
+                                />
+                            </svg>
+                        </label>
+                        <label class="delivery-choise__navigation-button delivery-choise__navigation-button-3 tabs__navigation-button tabs__navigation-button-3 responsive-1" for="deliveryChoiseSwitch3">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M24.4407 20.8311C24.6021 21.0329 24.9077 21.0329 25.0634 20.8311L27.6178 17.5848C27.8254 17.3254 27.6351 16.9448 27.3064 16.9448H26.3031V11.2595C26.3031 11.1153 26.1878 11 26.0437 11H23.4605C23.3163 11 23.201 11.1153 23.201 11.2595V16.9448H22.1977C21.869 16.9448 21.6787 17.3254 21.8863 17.5848L24.4407 20.8311Z"
+                                    fill="#696969"
+                                />
+                                <path
+                                    d="M36.9876 22.4572H34.4102L31.2158 13.9003C31.014 13.3641 30.4201 13.0931 29.8839 13.2949C29.3476 13.4967 29.0766 14.0906 29.2784 14.6269L32.2076 22.4629H17.2965L20.2257 14.6269C20.4275 14.0906 20.1565 13.4967 19.6203 13.2949C19.084 13.0931 18.4901 13.3641 18.2883 13.9003L15.0881 22.4572H12.5165C11.6804 22.4572 11 23.1376 11 23.9736V26.4934C11 27.3295 11.6804 28.0099 12.5165 28.0099H13.6409L15.4341 37.1606C15.6474 38.187 16.6392 39 17.6656 39H22.7628C23.1895 39 23.743 39 24.3081 39H25.1211C25.715 39 26.2974 39 26.7471 39H31.8443C32.8707 39 33.8624 38.187 34.0758 37.1606L35.869 28.0099H36.9934C37.8295 28.0099 38.5099 27.3295 38.5099 26.4934V23.9736C38.5099 23.1376 37.8295 22.4572 36.9876 22.4572ZM20.9522 35.5807C20.9522 36.1458 20.4909 36.5725 19.9605 36.5725C19.3954 36.5725 18.9687 36.1112 18.9687 35.5807V30.028C18.9687 29.4629 19.43 29.0362 19.9605 29.0362C20.5255 29.0362 20.9522 29.4975 20.9522 30.028V35.5807ZM24.1409 35.5807C24.1409 36.1458 23.6796 36.5725 23.1491 36.5725C22.584 36.5725 22.1573 36.1112 22.1573 35.5807V30.028C22.1573 29.4629 22.6186 29.0362 23.1491 29.0362C23.6796 29.0362 24.1409 29.4975 24.1409 30.028V35.5807ZM27.3468 35.575C27.3468 36.1054 26.9201 36.5667 26.355 36.5667C25.8245 36.5667 25.3633 36.14 25.3633 35.575V30.0165C25.3633 29.486 25.8245 29.0247 26.355 29.0247C26.8855 29.0247 27.3468 29.4514 27.3468 30.0165V35.575ZM30.5296 35.575C30.5296 36.1054 30.103 36.5667 29.5379 36.5667C29.0074 36.5667 28.5461 36.14 28.5461 35.575V30.0165C28.5461 29.486 28.9728 29.0247 29.5379 29.0247C30.0684 29.0247 30.5296 29.4514 30.5296 30.0165V35.575Z"
+                                    fill="#696969"
+                                />
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="delivery-choise__content tabs__content">
+                        <div class="delivery-choise__content-item delivery-choise__content-item-1 tabs__content-item tabs__content-item-1">
+                            <p class="delivery-choise__content-item-gray">Завтра (по Москве и МО)</p>
+                            Доставка одного товара - 350р Доставка с другим товаром - 280р
+                            <a class="delivery-choise__content-item-red hover-underline-2" href="#">Подробнее о доставке</a>
+                        </div>
+                        <div class="delivery-choise__content-item delivery-choise__content-item-2 tabs__content-item tabs__content-item-2">
+                            <p class="delivery-choise__content-item-gray">Пункты выдачи самовывоза</p>
+                            <a class="delivery-choise__content-item-red hover-underline-2" href="#">Подробнее о самовывозе</a>
+                        </div>
+                        <div class="delivery-choise__content-item delivery-choise__content-item-3 tabs__content-item tabs__content-item-3"></div>
+                    </div>
+                </div>
+                <div class="aside-image-1 responsive-1 show-item">
+                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/aside__bg-1.jpg" loading="lazy" alt="image" />
+                </div>
+                <div class="aside-block show-item">
+                    <p class="aside-block__title">Пункты выдачи</p>
+                    <ul class="aside-block__list">
+                        <li class="aside-block__item">
+                            <a class="aside-block__link hover-underline-2" href="#">
+                                <span class="aside-block__image aside-2__block-1-image responsive-1">
+                                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/block-1__img-1.svg" loading="lazy" width="32" height="32" alt="image" />
+                                </span>
+                                <span class="aside-block__label">Пункты выдачи</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="aside-block show-item">
+                    <p class="aside-block__title">Услуги</p>
+                    <ul class="aside-block__list">
+                        <li class="aside-block__item">
+                            <a class="aside-block__link hover-underline-2" href="#">
+                                <span class="aside-block__image responsive-1">
+                                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/block-2__1.svg" loading="lazy" width="24" height="24" alt="image" />
+                                </span>
+                                <span class="aside-block__label">VIP - Доставка</span>
+                            </a>
+                        </li>
+                        <li class="aside-block__item">
+                            <a class="aside-block__link hover-underline-2" href="#">
+                                <span class="aside-block__image responsive-1">
+                                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/block-2__2.svg" loading="lazy" width="24" height="24" alt="image" />
+                                </span>
+                                <span class="aside-block__label">Проверка на битые пиксели</span>
+                            </a>
+                        </li>
+                        <li class="aside-block__item">
+                            <a class="aside-block__link hover-underline-2" href="#">
+                                <span class="aside-block__image responsive-1">
+                                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/block-2__3.svg" loading="lazy" width="24" height="24" alt="image" />
+                                </span>
+                                <span class="aside-block__label">Купоны подключения техники</span>
+                            </a>
+                        </li>
+                        <li class="aside-block__item">
+                            <a class="aside-block__link hover-underline-2" href="#">
+                                <span class="aside-block__image responsive-1">
+                                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/block-2__4.svg" loading="lazy" width="24" height="24" alt="image" />
+                                </span>
+                                <span class="aside-block__label">Установка кондиционеров</span>
+                            </a>
+                        </li>
+                        <li class="aside-block__item">
+                            <a class="aside-block__link hover-underline-2" href="#">
+                                <span class="aside-block__image responsive-1">
+                                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/block-2__5.svg" loading="lazy" width="24" height="24" alt="image" />
+                                </span>
+                                <span class="aside-block__label">Обслуживание сплит-систем</span>
+                            </a>
+                        </li>
+                        <li class="aside-block__item">
+                            <a class="aside-block__link hover-underline-2" href="#">
+                                <span class="aside-block__image responsive-1">
+                                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/block-2__6.svg" loading="lazy" width="24" height="24" alt="image" />
+                                </span>
+                                <span class="aside-block__label">Сборка и установка мебели</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="aside-image-2 responsive-1 show-item">
+                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/aside-2__image-1.jpg" loading="lazy" width="295" height="120" alt="image" />
+                </div>
+                <div class="aside-image-3 responsive-1 show-item">
+                    <img class="lazy-image lazy" src="img/1x1.png" data-src="img/aside-2__image-2.jpg" loading="lazy" width="295" height="120" alt="image" />
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer__container container">
+                <div class="footer__column footer__column-1 show-item">
+                    <input class="footer__column-switch" id="footerTitle1" type="checkbox" />
+                    <label class="footer__column-title" for="footerTitle1">Нужна помощь?</label>
+                    <ul class="footer__column-list">
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Перед покупкой</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Как сделать заказ на Vasko.ru?</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Как правильно принимать товар</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Белоруссия - Покупать в Москве дешевле!</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Условия доставки в интернет-магазине Vasko.ru</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Установка и тех. обслуживание кондиционеров</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Техническое обслуживание сплит-систем</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Express подключение стиральных машин</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Express сборка тренажеров</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Обмен и возврат</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Сервис и ремонт</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column footer__column-2 show-item">
+                    <input class="footer__column-switch" id="footerTitle2" type="checkbox" />
+                    <label class="footer__column-title" for="footerTitle2">Новости и Акции</label>
+                    <ul class="footer__column-list">
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Снижена стоимость установки кондиционеров!</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Заготавливаем зелень на зиму</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Июнь - травень</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Кондиционеры NeoClima</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Где производятся кондиционеры Daikin?</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Где производятся кондиционеры Panasonic?</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Где производятся кондиционеры Gree?</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Стиральная машина Hoover WDXT 4118 AH/1-07</a></li>
+                        <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Где производятся посудомоечные машины Bosch?</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column footer__column-3">
+                    <div class="footer__column-3-block footer__column-3-left show-item">
+                        <input class="footer__column-switch" id="footerTitle3" type="checkbox" />
+                        <label class="footer__column-title" for="footerTitle3">О компании</label>
+                        <ul class="footer__column-list">
+                            <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Услуги компании</a></li>
+                            <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Вакансии</a></li>
+                            <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Реклама на сайте</a></li>
+                            <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Партнерство</a></li>
+                            <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Статьи</a></li>
+                            <li class="footer__column-item"><a class="footer__column-link hover-underline-1" href="#">Отзывы</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column-3-block footer__column-3-right show-item">
+                        <a class="why hover-background-1" href="#">Почему мы?</a>
+                        <a class="mail" href="mailto:sales@vasko.ru">sales@vasko.ru</a>
+                        <div class="footer-phone phone">
+                            <a class="footer-phone__number-1 phone__number-1 hover-typing-text" href="tel:+74957752767" data-text="+7 (495) 775-27-67">+7 (495) 775-27-67</a>
+                            <a class="footer-phone__number-2 phone__number-2 hover-typing-text" href="tel:+74959833049" data-text="+7 (495) 983-30-49">+7 (495) 983-30-49</a>
+                        </div>
+                        <ul class="socials">
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15 0C6.71601 0 0 6.7157 0 15C0 23.2843 6.71601 30 15 30C23.284 30 30 23.2843 30 15C30 6.7157 23.284 0 15 0ZM22.6088 16.6223C23.3079 17.3052 24.0476 17.9478 24.6752 18.7013C24.9532 19.0346 25.2153 19.3792 25.4148 19.7669C25.6996 20.3196 25.4425 20.9257 24.9477 20.9586L21.8747 20.958C21.081 21.0236 20.4494 20.7035 19.9169 20.1609C19.4919 19.7285 19.0975 19.2666 18.6881 18.8194C18.5208 18.6359 18.3447 18.4631 18.1347 18.3272C17.7158 18.0546 17.3518 18.1381 17.1118 18.5758C16.8672 19.0211 16.8114 19.5146 16.788 20.0102C16.7546 20.7348 16.5361 20.9242 15.809 20.9583C14.2554 21.031 12.7814 20.7953 11.4114 20.0121C10.2028 19.3212 9.26731 18.3462 8.45217 17.2423C6.86486 15.0902 5.64921 12.7283 4.55693 10.2985C4.3111 9.7513 4.49095 9.45852 5.09463 9.44716C6.0976 9.42783 7.10056 9.43028 8.10353 9.44624C8.51171 9.45268 8.78179 9.68624 8.93862 10.0714C9.48061 11.4049 10.1451 12.6737 10.9777 13.8503C11.1996 14.1637 11.4261 14.4761 11.7486 14.6974C12.1047 14.9417 12.376 14.861 12.5438 14.4635C12.6513 14.2109 12.6976 13.9409 12.7209 13.6702C12.8007 12.743 12.8102 11.8162 12.6721 10.8927C12.5862 10.3148 12.2612 9.94158 11.6851 9.83233C11.3917 9.77678 11.4347 9.66813 11.5774 9.50056C11.8251 9.21084 12.0571 9.03161 12.5208 9.03161L15.9928 9.031C16.5401 9.13841 16.6628 9.38394 16.7371 9.93514L16.7402 13.7936C16.7337 14.0069 16.8473 14.6391 17.2303 14.7787C17.5372 14.88 17.7397 14.6339 17.9233 14.4396C18.7559 13.556 19.3492 12.5131 19.8804 11.4338C20.1149 10.9577 20.3171 10.4652 20.5136 9.97166C20.6596 9.60675 20.8868 9.42721 21.2986 9.43335L24.642 9.43734C24.7406 9.43734 24.8406 9.43826 24.9382 9.45514C25.5017 9.55151 25.6561 9.79396 25.4817 10.3436C25.2074 11.2073 24.6743 11.9266 24.1531 12.6479C23.5946 13.4201 22.9989 14.1652 22.4458 14.9408C21.9376 15.6497 21.9778 16.0066 22.6088 16.6223Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.9994 18.0029C16.6543 18.0029 18.0035 16.6561 18.0035 15C18.0035 14.3462 17.7896 13.7426 17.4356 13.2496C16.89 12.4931 16.003 11.9971 15.0012 11.9971C13.9988 11.9971 13.1125 12.4925 12.5657 13.249C12.2104 13.742 11.9983 14.3456 11.9977 14.9994C11.9959 16.6555 13.3439 18.0029 14.9994 18.0029Z"
+                                            fill="#C62306"
+                                        />
+                                        <path d="M21.5567 11.3265V8.43474L18.6644 8.4438L18.6741 11.3361L21.5567 11.3265Z" fill="#C62306" />
+                                        <path
+                                            d="M15 0C6.72903 0 0 6.72903 0 15C0 23.2704 6.72903 30 15 30C23.2704 30 30 23.2704 30 15C30 6.72903 23.2716 0 15 0ZM23.5308 20.2342C23.5308 22.0535 22.0517 23.532 20.2336 23.532H9.76637C7.94772 23.532 6.46923 22.0535 6.46923 20.2342V9.76698C6.46923 7.94832 7.94772 6.46983 9.76637 6.46983H20.233C22.0517 6.46983 23.5308 7.94832 23.5308 9.76698V20.2342Z"
+                                            fill="#C62306"
+                                        />
+                                        <path
+                                            d="M19.6662 15.0002C19.6662 17.5723 17.5732 19.6665 14.9999 19.6665C12.4266 19.6665 10.3342 17.5723 10.3342 15.0002C10.3342 14.3815 10.4575 13.79 10.6774 13.2498H8.13071V20.2344C8.13071 21.1371 8.86361 21.8682 9.76569 21.8682H20.2323C21.1332 21.8682 21.8673 21.1371 21.8673 20.2344V13.2498H19.3194C19.5411 13.79 19.6662 14.3815 19.6662 15.0002Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.0143 12.4317C16.4466 12.4264 17.5874 11.2758 17.5822 9.84045C17.5769 8.40444 16.4337 7.26183 15.0008 7.2606C13.5559 7.25907 12.4019 8.42286 12.413 9.87176C12.4237 11.3019 13.5774 12.4369 15.0143 12.4317Z"
+                                            fill="#C62306"
+                                        />
+                                        <path
+                                            d="M15 0C6.7157 0 0 6.71601 0 15C0 23.284 6.7157 30 15 30C23.2843 30 30 23.284 30 15C30 6.71601 23.2843 0 15 0ZM15.0215 4.56153C17.9432 4.56951 20.2883 6.95939 20.2732 9.91335C20.2585 12.7992 17.8751 15.1381 14.9583 15.1283C12.0712 15.1185 9.70343 12.7249 9.72061 9.83325C9.73688 6.90998 12.1059 4.55356 15.0215 4.56153ZM20.9392 17.2042C20.2932 17.8674 19.5155 18.3474 18.6519 18.6823C17.8355 18.9987 16.9409 19.158 16.0551 19.2641C16.1893 19.4096 16.2522 19.4811 16.3357 19.5646C17.5375 20.7729 18.7452 21.975 19.943 23.1867C20.3512 23.5998 20.4362 24.1117 20.2116 24.5914C19.9663 25.1162 19.4161 25.4612 18.8762 25.424C18.5343 25.4004 18.2676 25.2307 18.031 24.9922C17.1238 24.0795 16.1994 23.183 15.3112 22.2531C15.0519 21.9824 14.9279 22.034 14.6992 22.2691C13.7868 23.2088 12.8593 24.1335 11.9267 25.0533C11.5077 25.4664 11.0093 25.5413 10.5232 25.305C10.0066 25.0551 9.67826 24.5276 9.70343 23.9969C9.72123 23.6391 9.89739 23.3647 10.1435 23.1198C11.3334 21.9324 12.5196 20.7413 13.7061 19.5511C13.785 19.4722 13.858 19.3884 13.9725 19.2657C12.3542 19.0966 10.8948 18.6982 9.64542 17.7213C9.49013 17.5998 9.33023 17.4826 9.18905 17.3463C8.64184 16.8212 8.58691 16.2193 9.01934 15.6C9.38977 15.0697 10.0109 14.9279 10.657 15.2326C10.7822 15.2913 10.9013 15.3655 11.0154 15.4441C13.3436 17.044 16.5422 17.0879 18.8796 15.5156C19.111 15.3388 19.3587 15.1934 19.6456 15.12C20.203 14.9764 20.7235 15.1817 21.0224 15.6697C21.3646 16.2273 21.3606 16.7712 20.9392 17.2042Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.0001 0C6.71586 0 0 6.74393 0 15.0628C0 22.5239 5.40783 28.7029 12.4984 29.8994V18.2053H8.87992V13.9971H12.4984V10.8941C12.4984 7.29377 14.6882 5.33179 17.8871 5.33179C19.4191 5.33179 20.7357 5.44643 21.1179 5.49692V9.26024L18.8993 9.26132C17.16 9.26132 16.8247 10.0911 16.8247 11.3092V13.9949H20.9748L20.4335 18.2032H16.8247V30C24.2463 29.093 30 22.7565 30 15.0585C30 6.74393 23.2841 0 15.0001 0Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15 0C6.71559 0 0 6.71471 0 15C0 23.2862 6.71559 30 15 30C23.2844 30 30 23.2862 30 15C30 6.71471 23.2844 0 15 0ZM22.8547 12.315C22.8618 12.4659 22.8653 12.6176 22.8653 12.7712C22.8653 17.4353 19.3156 22.815 12.8215 22.815C10.8274 22.815 8.97265 22.2309 7.41 21.2294C7.68706 21.2621 7.96765 21.2779 8.25265 21.2779C9.90706 21.2779 11.4282 20.7141 12.6362 19.7682C11.0921 19.7391 9.78794 18.7191 9.33971 17.3179C9.555 17.3585 9.77559 17.3797 10.0032 17.3797C10.3253 17.3797 10.6376 17.3365 10.9324 17.2553C9.31941 16.9315 8.10176 15.5029 8.10176 13.7921C8.10176 13.7779 8.10176 13.7647 8.10176 13.7488C8.57912 14.0135 9.12265 14.1715 9.70147 14.19C8.75471 13.5574 8.13176 12.4774 8.13176 11.2509C8.13176 10.6059 8.30559 9.99794 8.61 9.47647C10.35 11.6126 12.9521 13.0182 15.8859 13.1647C15.8259 12.9062 15.7941 12.6371 15.7941 12.3609C15.7941 10.4118 17.3744 8.83147 19.3235 8.83147C20.3365 8.83147 21.255 9.25941 21.9 9.94588C22.7029 9.78706 23.46 9.49324 24.1421 9.09088C23.8782 9.915 23.3171 10.6059 22.5909 11.0418C23.3047 10.9571 23.985 10.7674 24.6176 10.4868C24.1421 11.1953 23.5447 11.8182 22.8547 12.315Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.2666 18.2876C14.5174 17.1204 16.7486 15.964 19.0004 14.7962C16.7419 13.6177 14.5113 12.4545 12.2666 11.2831C12.2666 13.626 12.2666 15.945 12.2666 18.2876Z" fill="#C62306" />
+                                        <path
+                                            d="M15 0C6.71601 0 0 6.7157 0 15C0 23.2843 6.71601 30 15 30C23.284 30 30 23.2843 30 15C30 6.7157 23.284 0 15 0ZM25.2203 20.0069C24.9606 21.1332 24.0393 21.964 22.9304 22.0877C20.3042 22.3814 17.6464 22.3829 14.9994 22.3814C12.3523 22.3829 9.69391 22.3814 7.06711 22.0877C5.95826 21.964 5.03755 21.1332 4.77852 20.0069C4.40931 18.4024 4.40931 16.6515 4.40931 15C4.40931 13.3485 4.41361 11.597 4.78281 9.99315C5.04184 8.8668 5.96256 8.0357 7.07141 7.91171C9.69821 7.61831 12.3566 7.61678 15.0037 7.61831C17.6501 7.61678 20.3085 7.61831 22.9344 7.91171C24.0439 8.0357 24.9652 8.8665 25.2242 9.99315C25.5935 11.5973 25.5904 13.3485 25.5904 15C25.5904 16.6515 25.5895 18.4027 25.2203 20.0069Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71568 23.2843 0 15 0C6.71568 0 0 6.71568 0 15C0 23.2843 6.71568 30 15 30ZM23.1205 8.81961C23.2102 9.44636 23.0269 10.0802 22.6117 10.5799L21.9093 11.4258L16.7773 7.79381L17.5051 6.91574C18.3576 5.89453 19.9309 5.69824 21.0414 6.47482L22.1348 7.24491C22.676 7.62577 23.0311 8.19308 23.1205 8.81961ZM7.71429 24L8.00893 19.1957L12.3505 22.2309L7.71429 24ZM21.1865 12.2953L16.0553 8.66413L8.2975 18.0222L13.441 21.6184L21.1865 12.2953Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.8862 17.5367C17.8862 16.8371 18.4547 16.2686 19.1543 16.2686C19.8541 16.2686 20.4226 16.8371 20.4226 17.5367C20.4226 18.2365 19.8541 18.8048 19.1543 18.8048C18.4547 18.8048 17.8862 18.2365 17.8862 17.5367Z"
+                                            fill="#C62306"
+                                        />
+                                        <path
+                                            d="M9.00858 18.8048C8.30901 18.8048 7.74044 19.3734 7.74044 20.073C7.74044 20.7727 8.30901 21.3411 9.00858 21.3411C9.70836 21.3411 10.2769 20.7727 10.2769 20.073C10.2769 19.3734 9.70836 18.8048 9.00858 18.8048Z"
+                                            fill="#C62306"
+                                        />
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71568 23.2843 0 15 0C6.71568 0 0 6.71568 0 15C0 23.2843 6.71568 30 15 30ZM19.1543 21.3411C21.2524 21.3411 22.9591 19.6346 22.9591 17.5367V7.39139C22.9591 6.55999 22.1723 5.96003 21.3836 6.16176L11.2379 8.69803C10.6733 8.83908 10.2769 9.3457 10.2769 9.92766V16.5021C9.98375 16.3975 9.67718 16.3205 9.35784 16.287C9.24296 16.275 9.1266 16.2686 9.00858 16.2686C6.91071 16.2686 5.20396 17.9751 5.20396 20.073C5.20396 22.1708 6.91071 23.8776 9.00858 23.8776C11.1067 23.8776 12.8132 22.1708 12.8132 20.073V10.9185L20.4226 9.01632V13.9658C20.024 13.8237 19.6011 13.7323 19.1543 13.7323C17.0564 13.7323 15.3497 15.4388 15.3497 17.5367C15.3497 19.6346 17.0564 21.3411 19.1543 21.3411Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.5737 12.0573C9.73451 12.4139 9.29883 13.3213 9.13749 14.1803C8.99226 15.2174 9.08915 16.3518 9.68617 17.227C10.1702 17.9724 11.2354 18.3614 12.0259 17.8751C12.5746 17.5672 12.9298 17.0487 13.1394 16.4653C13.4138 15.6389 13.4138 14.2289 13.0911 13.4186C13.0126 13.2296 12.9191 13.0522 12.8084 12.8862C12.6912 12.7104 12.5548 12.5476 12.3972 12.3976C11.9293 11.9276 11.1707 11.879 10.5737 12.0573Z"
+                                            fill="#C62306"
+                                        />
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71568 23.2843 0 15 0C6.71568 0 0 6.71568 0 15C0 23.2843 6.71568 30 15 30ZM17.7997 11.5871C17.7997 10.7283 17.9772 9.83705 18.4775 9.12388C19.5264 7.51967 21.5759 6.87137 23.4155 7.03334C24.2708 7.11454 24.3677 8.50823 23.5446 8.70264C22.6733 8.70264 21.6726 8.89704 21.1885 9.70731C20.6809 10.6341 20.7093 11.6769 20.7374 12.7054C20.7487 13.1156 20.7598 13.5234 20.7367 13.9208C21.0015 13.9338 21.2662 13.9313 21.5309 13.9288C21.9277 13.9248 22.3246 13.9208 22.7216 13.9694C23.3509 14.2287 23.4639 15.2335 22.8185 15.5414C22.3885 15.6994 21.9312 15.6793 21.4731 15.6592C21.2266 15.6485 20.9797 15.6378 20.7367 15.6548C20.6721 16.9836 20.8659 18.3449 20.543 19.6415C20.1234 21.262 18.7033 22.5098 17.0736 22.7852C16.969 22.8011 16.8637 22.8187 16.758 22.8363C16.1137 22.9441 15.4543 23.0543 14.8305 22.8177C14.2171 22.445 14.314 21.5537 14.9111 21.2134L15.0883 21.2143C15.4713 21.217 15.8693 21.2199 16.2305 21.1113C16.4161 21.0555 16.5919 20.9703 16.7507 20.8405C17.5898 20.1276 17.8158 18.9607 17.7997 17.9075V11.5871ZM6.26493 10.7934C5.91002 11.1822 5.8939 11.7495 5.8939 12.2356C5.90039 13.4933 5.89662 14.7485 5.89265 16.0032C5.88679 17.8847 5.88093 19.7649 5.91002 21.651C5.94224 22.8827 7.63665 23.4337 8.44357 22.5747C8.56348 22.4364 8.6566 22.2891 8.72628 22.1344C8.84431 21.8726 8.89537 21.5899 8.89537 21.2944V19.3336C11.1385 20.2736 14.0755 19.7712 15.5924 17.7617C16.496 16.4977 16.722 14.7637 16.1411 13.3052C15.7215 12.0735 14.6886 11.1336 13.5107 10.6636C11.9132 10.0317 10.1057 10.1612 8.52434 10.7934C7.97566 10.0965 6.7975 10.0641 6.26493 10.7934Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="socials__item">
+                                <a class="socials__link responsive-1 hover-svg" href="#">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.9414 0C6.70254 0 0 6.70254 0 14.9414C0 23.1803 6.70254 30 14.9414 30C23.1803 30 30 23.1803 30 14.9414C30 6.70254 23.1803 0 14.9414 0ZM21.2109 19.3359C20.0231 19.3359 18.9755 18.7406 18.3388 17.8362C17.533 18.7483 16.3684 19.3359 15.0586 19.3359C12.6356 19.3359 10.6641 17.3644 10.6641 14.9414C10.6641 12.5184 12.6356 10.5469 15.0586 10.5469C16.0516 10.5469 16.9586 10.8905 17.6953 11.4482V11.4258C17.6953 10.94 18.0884 10.5469 18.5742 10.5469C19.06 10.5469 19.4531 10.94 19.4531 11.4258C19.4531 13.3805 19.4531 13.8647 19.4531 15.8203C19.4531 16.7893 20.2419 17.5781 21.2109 17.5781C22.18 17.5781 22.9688 16.7893 22.9688 15.8203C22.9688 9.93803 19.0763 7.03125 15.0586 7.03125C10.6967 7.03125 7.14844 10.5795 7.14844 14.9414C7.14844 19.3033 10.6967 22.8516 15.0586 22.8516C16.8164 22.8516 18.4789 22.2885 19.8669 21.2225C20.7939 20.5148 21.8555 21.9118 20.938 22.6164C19.2394 23.9201 17.2069 24.6094 15.0586 24.6094C9.72768 24.6094 5.39062 20.2723 5.39062 14.9414C5.39062 9.61049 9.72768 5.27344 15.0586 5.27344C19.9158 5.27344 24.7266 8.85557 24.7266 15.8203C24.7266 17.7592 23.1499 19.3359 21.2109 19.3359Z"
+                                            fill="#C62306"
+                                        />
+                                        <path
+                                            d="M15.0586 12.3047C13.6046 12.3047 12.4219 13.4875 12.4219 14.9414C12.4219 16.3954 13.6046 17.5781 15.0586 17.5781C16.5125 17.5781 17.6953 16.3954 17.6953 14.9414C17.6953 13.4875 16.5125 12.3047 15.0586 12.3047Z"
+                                            fill="#C62306"
+                                        />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="footer-call call hover-background-1" href="#">Обратный звонок</a>
+                    </div>
+                    <p class="timetable">Заказ товаров без выходных с <span class="timetable__number">9:00</span> до <span class="timetable__number">20:00</span></p>
+                </div>
+            </div>
+            <ul class="list-line container show-item">
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Телевизоры</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Cтиральные машины</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Холодильники</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Кофемашины</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Посудомоечные машины</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Кухонные плиты</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Вытяжки</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Печи СВЧ</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Мультиварки</a>
+                </li>
+                <li class="list-line__item">
+                    <a class="list-line__link hover-underline-1" href="#">Кондиционеры</a>
+                </li>
+            </ul>
+        </footer>
+        <div class="footer-bottom show-item">
+            <div class="footer-bottom__container container">
+                <p class="footer-bottom__label">
+                    2004—2018 Интернет-магазин бытовой техники
+                    <span class="footer-bottom__label-name">Vasko.RU / Васко.ру</span>
+                </p>
+                <p class="footer-bottom__additionally">
+                    Цены и наличие товарных предложений актуальны на
+                    <span class="footer-bottom__additionally-time">05:00 28.09.2018</span>
+                </p>
+            </div>
+        </div>
+
+        <script src="js/script.min.js" defer></script>
+    </body>
+</html>

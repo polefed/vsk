@@ -1,0 +1,168 @@
+<div class="header">
+  <header class="header-top">
+      <div class="header-top__container container">
+          <a class="header-top__logo responsive-1" href="#"> <img class="lazy" src="img/1x1.png" data-src="img/logo.svg" loading="lazy" width="160" height="36" alt="image" /> </a>
+          <div class="search">
+              <input id="searchSwitch" class="toggle" type="checkbox" />
+              <div class="search__block">
+                  <input class="search__block-input" id="search" type="search" placeholder="search" required />
+                  <label class="search__block-label" for="search">Введите название товара</label>
+                  <div class="search-menu">
+                      <div class="search-menu__category">
+                          <p class="search-menu__category-label">Холодильники</p>
+                          <div class="search-menu__category-info">
+                              <ul class="search-menu__category-list">
+                                  <li class="search-menu__category-item">Холодильник AEG RCB 63726 OW</li>
+                                  <li class="search-menu__category-item">Холодильник AEG 657263</li>
+                                  <li class="search-menu__category-item">Холодильник AEG RCB 63726 OW</li>
+                                  <li class="search-menu__category-item">Холодильник AEG 657263</li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="search-menu__category">
+                          <p class="search-menu__category-label">Прочее</p>
+                          <div class="search-menu__category-info">
+                              <p class="search-menu__category-sublabel">Остальные</p>
+                              <ul class="search-menu__category-list">
+                                  <li class="search-menu__category-item"><a class="search-menu__category-link" href="#">Средство для холодильников Electrolux</a></li>
+                                  <li class="search-menu__category-item"><a class="search-menu__category-link" href="#">Средство для холодильников Bork</a></li>
+                                  <li class="search-menu__category-item"><a class="search-menu__category-link" href="#">Средство для холодильников Electrolux</a></li>
+                                  <li class="search-menu__category-item"><a class="search-menu__category-link" href="#">Средство для холодильников Bork</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <label for="searchSwitch" class="toggle-overlay search-overlay"></label>
+              <label for="searchSwitch" class="search__icon responsive-1"> </label>
+          </div>
+          <input class="delivery-switch toggle" id="deliverySwitch" type="checkbox" />
+          <label class="toggle-overlay delivery-overlay" for="deliverySwitch"></label>
+          <label class="delivery button-1 hover-background-1" for="deliverySwitch">Доставка</label>
+          <ul class="delivery-list toggle-element">
+              <li class="delivery-list__item">Стандартный с 12:00 до 18:00</li>
+              <li class="delivery-list__item">Стандартный с 16:00 до 22:00</li>
+              <li class="delivery-list__item">VIP с 12:00 до 15:00</li>
+              <li class="delivery-list__item">VIP с 13:00 до 16:00</li>
+              <li class="delivery-list__item">VIP с 14:00 до 17:00</li>
+              <li class="delivery-list__item">VIP с 15:00 до 18:00</li>
+              <li class="delivery-list__item">VIP с 16:00 до 19:00</li>
+              <li class="delivery-list__item">VIP с 17:00 до 20:00</li>
+              <li class="delivery-list__item">VIP с 18:00 до 21:00</li>
+              <li class="delivery-list__item">VIP с 19:00 до 22:00</li>
+          </ul>
+          <a class="help" href="#">?</a>
+          <div class="header-phone phone">
+              <input class="header-phone__arrow-switch toggle" id="arrowSwitch" type="checkbox" />
+              <a class="header-phone__number-1 phone__number-1 hover-typing-text" href="tel:+74957752767" data-text="+7 (495) 775-27-67">+7 (495) 775-27-67</a> <label class="header-phone__arrow-button" for="arrowSwitch"></label>
+              <a class="header-phone__number-2 phone__number-2 hover-typing-text" href="tel:+74959833049" data-text="+7 (495) 983-30-49">+7 (495) 983-30-49</a>
+              <label class="header-phone__overlay toggle-overlay" for="arrowSwitch"></label>
+          </div>
+          <input class="toggle" id="cartButtonSwitch" type="checkbox" />
+          <label class="cart-overlay toggle-overlay" for="cartButtonSwitch"></label>
+          <label class="cart-button button-1 hover-background-1" for="cartButtonSwitch"> <span class="cart-button__icon"></span> <span class="cart-button__label">Корзина:</span> <span class="cart-button__number">0</span> </label>
+          <div class="cart-element toggle-element">
+              <p class="cart-element__empty">Ваша корзина пуста</p>
+              <div class="cart-wrapper">
+                  <div class="cart-item">
+                      <div class="cart-item__image responsive-1"><img class="lazy" src="img/1x1.png" data-src="img/best__1.png" loading="lazy" width="70" height="70" alt="image" /></div>
+                      <div class="cart-item__description">
+                          <p class="cart-item__description-label">Холодильник Bosch Gold Edition KGN39AD18R</p>
+                          <p class="cart-item__description-price">
+                              <span class="cart-item__description-price-number">38 290</span>
+                              <span class="cart-item__description-price-currency">₽</span>
+                          </p>
+                      </div>
+                      <div class="cart-item__delete"></div>
+                  </div>
+              </div>
+              <p class="cart-element__total"><span class="cart-element__total-text">Итого:</span> <span class="cart-element__total-number">0</span> <span class="cart-element__total-currency">₽</span></p>
+              <a class="cart-element__go" href="#">Перейти в корзину</a>
+          </div>
+          <input class="user toggle" id="user" type="checkbox" />
+          <label class="user-button" for="user"></label>
+          <label class="user-overlay toggle-overlay" for="user"></label>
+          <div class="authorization toggle-element tabs">
+              <input id="filterLogin" class="authorization__switch tabs__switch tabs__switch-1" name="loginRegistration" type="radio" checked />
+              <input id="filterRegistration" class="authorization__switch tabs__switch tabs__switch-2" name="loginRegistration" type="radio" />
+              <input id="authorizationReturnSwitch" class="authorization__return-switch" type="checkbox" />
+              <input id="rememberPasswordSwitch" class="authorization__remember-switch" type="checkbox" checked />
+              <div class="authorization__navigation tabs__navigation">
+                  <label class="authorization__navigation-button authorization__navigation-button-1 tabs__navigation-button tabs__navigation-button-1" for="filterLogin">Вход</label>
+                  <label class="authorization__navigation-button authorization__navigation-button-2 tabs__navigation-button tabs__navigation-button-2" for="filterRegistration">Регистрация</label>
+              </div>
+              <div class="authorization__content tabs__content">
+                  <div class="authorization__content-item authorization-login">
+                      <form class="authorization-form">
+                          <label class="authorization-form__label">Логин</label>
+                          <input class="authorization-form__input" type="text" />
+                          <label class="authorization-form__label">Пароль</label>
+                          <input class="authorization-form__input" type="password" />
+                          <label class="authorization-form__confirm authorization-form__confirm-login">
+                              <input class="authorization-form__confirm-checkbox" type="checkbox" checked /> <span class="authorization-form__confirm-text">Запомнить меня на этом компьютере</span>
+                          </label>
+                          <button class="authorization-form__submit hover-background-1" type="submit">Авторизоваться</button>
+                      </form>
+                  </div>
+                  <div class="authorization__content-item authorization-registration">
+                      <form class="authorization-form">
+                          <label class="authorization-form__label">Логин <span class="authorization-form__label-symbol">*</span> </label>
+                          <input class="authorization-form__input" type="text" required />
+                          <label class="authorization-form__label">Пароль <span class="authorization-form__label-symbol">*</span> </label>
+                          <input class="authorization-form__input" type="password" required />
+                          <label class="authorization-form__label">Подтверждение пароля <span class="authorization-form__label-symbol">*</span> </label>
+                          <input class="authorization-form__input" type="password" required />
+                          <label class="authorization-form__label">Адрес e-mail <span class="authorization-form__label-symbol">*</span> </label>
+                          <input class="authorization-form__input" type="email" required />
+                          <label class="authorization-form__label">Имя</label>
+                          <input class="authorization-form__input" type="text" />
+                          <label class="authorization-form__label">Фамилия</label>
+                          <input class="authorization-form__input" type="text" />
+                          <label class="authorization-form__confirm">
+                              <input class="authorization-form__confirm-checkbox" type="checkbox" checked /> <span class="authorization-form__confirm-text">Запомнить меня на этом компьютере</span>
+                          </label>
+                          <label class="authorization-form__confirm">
+                              <input class="authorization-form__confirm-checkbox" type="checkbox" checked />
+                              <span class="authorization-form__confirm-text">
+                                  Я хочу учавствовать в бесплатной программе лояльности и получать баллы, информацию о скидках и акциях
+                              </span>
+                          </label>
+                          <button class="authorization-form__submit hover-background-1" type="submit">Регистрация</button>
+                      </form>
+                  </div>
+              </div>
+              <div class="authorization__remember">
+                  <p class="authorization__remember-text">Если вы забыли пароль, введите логин или E-Mail. Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.</p>
+                  <form class="authorization-form">
+                      <p class="authorization__remember-title">Выслать контрольную строку</p>
+                      <label class="authorization-form__label">Логин</label>
+                      <input class="authorization-form__input" type="text" />
+                      <label class="authorization-form__label">Пароль</label>
+                      <input class="authorization-form__input" type="password" />
+                      <button class="authorization-form__submit hover-background-1" type="submit">Выслать</button>
+                  </form>
+              </div>
+              <label class="authorization__remember-button" for="rememberPasswordSwitch">Забыли пароль?</label>
+              <label class="authorization__return-button" for="rememberPasswordSwitch">Авторизация</label>
+          </div>
+      </div>
+  </header>
+  <div class="header-bottom">
+      <div class="header-bottom__container container">
+          <input id="burger" class="burger toggle" type="checkbox" />
+          <label class="burger-overlay toggle-overlay" data-text="Закрыть" for="burger"></label>
+          <nav class="navigation">
+              <ul class="navigation__list">
+                  <li class="navigation__item navigation__item-red"><a href="#" class="navigation__link hover-underline-1">Для кухни</a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Для дома</a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Климатическая техника</a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Телевизоры</a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Для дачи</a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Спортивные товары</a></li>
+                  <li class="navigation__item"><a href="#" class="navigation__link hover-underline-1">Автотовары</a></li>
+              </ul>
+          </nav>
+          <a class="header-bottom__call call hover-background-1" href="#">Обратный звонок</a>
+      </div>
+  </div>
+</div>
