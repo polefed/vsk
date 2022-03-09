@@ -281,6 +281,7 @@
   &__logo {
     flex: 0 1 16rem;
     height: 3.6rem;
+    font: var(--font-16);
     @media (min-width: 1201px) {
       margin-right: 1.5rem;
     }

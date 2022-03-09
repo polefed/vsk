@@ -1402,6 +1402,7 @@ button.swiper-pagination-bullet {
 .header-top__logo {
   flex: 0 1 16rem;
   height: 3.6rem;
+  font: var(--font-16);
 }
 
 #deliverySwitch {
